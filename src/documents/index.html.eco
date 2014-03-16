@@ -1,0 +1,82 @@
+---
+layout: 'default'
+---
+
+<div class="jumbotron">
+	<h1>Hello, world!</h1>
+	<p>My name is Benoit Ratté and welcome to my online portfolio. Here you'll find some information about me and some of my game related projects. For an always up to date resume, please visit my <a href="http://www.linkedin.com/in/benoitratte">LinkedIn profile</a>.</p>
+</div>	<!-- /jumbotron -->
+
+<div class="row" id="about">
+	<div class="col-sm-8 col-md-8">
+		<h1>About Me</h1>
+		<p>My professional path is a bit particular. In 2003, I finished my <a href="http://en.wikipedia.org/wiki/Dipl%C3%B4me_d%27%C3%A9tudes_coll%C3%A9giales">DEC</a> in computer science and got a job as a web developer for Air Liquide Canada, where I worked for 4 ½ years. During my last performance review, the supervisor asked if I saw myself doing web development in 2, 5 or 10 years. The question took me by surprise, because I had not thought about it, but the honest answer was no. Web development wasn't my real passion. I was having more fun working on my 2D game engine in my free time.</p>
+
+		<p>After thinking long about it, I decided to quit my job and go back to school for a bachelor degree in computer science. At the same time, I started to get volunteering with the IGDA Montreal. Helping with the front desk at events helped me meet people with the same passions and gather advice to help my transition from web developer to game developer. Now that the transition is over, I couldn't be more happy.</p>
+	  
+		<p>My two favorites games are Tetris and Chess. When you stop to think about it, both game teach important life lessons. Tetris teaches you to think fast, act fast and deal with the pieces you're given. You can complain that it's the fourth squiggly in a row, but you still have to deal with it and swiftly or you'll lose. Chess teaches you that it's important to plan 3 moves ahead, taking in consideration the feint and decoy your enemy could be using and come up with contingency plans to counter them. If your plan is bad, your king is going to end up dead.</p>
+	</div>
+	<div class="col-sm-4 col-md-4">
+		<h1>Contact</h1>
+		<ul class="icons">
+			<li>
+				<i class="icon-envelope icon-large"></i>
+				<a href="mailto:#" onmouseover="{try{this.href='ma' + 'ilto:' + 'benoit' + '%40' + 'tioneb' + '' + '' + '.ca'}catch(e){}}" rel="email">benoit@<del style="display: none">REMOVEME</del>tioneb.ca</a>
+			</li>
+			<li>
+				<i class="icon-linkedin icon-large"></i>
+				<a href="http://www.linkedin.com/in/benoitratte">LinkedIn</a>
+			</li>
+			<li>
+				<i class="icon-github icon-large"></i>
+				<a href="http://www.github.com/dotneB">Github</a>
+			</li>			  
+		</ul>
+	</div>
+</div>	<!-- /about -->
+
+<h1>Professional projects</h1>
+<div id="projects">
+<% for project in @getCollection('projects').toJSON(): %>
+	<div id="project-<%= project.basename %>">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<span class="panel-title"><strong><%= project.name %></strong> <span class="pull-right text-right"><%= project.company %>, <%= project.timeframe %></span><span>
+		</div>
+		<div class="panel-body">
+			<%- project.contentRendered %>
+
+			<p>Technologies used:</p>
+			<ul>
+				<% for tech in project.techUsed: %>
+				<li><%- tech %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	</div>	<!-- /project-<%= project.basename %> -->
+<% end %>
+</div>
+
+<h1>Fun side-projects</h1>
+<div id="projects">
+<% for project in @getCollection('funprojects').toJSON(): %>
+	<div id="project-<%= project.basename %>">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<span class="panel-title"><strong><%= project.name %></strong> <span class="pull-right text-right"><%= project.company %>, <%= project.timeframe %></span><span>
+		</div>
+		<div class="panel-body">
+			<%- project.contentRendered %>
+
+			<p>Technologies used:</p>
+			<ul>
+				<% for tech in project.techUsed: %>
+				<li><%- tech %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	</div>	<!-- /project-<%= project.basename %> -->
+<% end %>
+</div>

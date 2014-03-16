@@ -42,3 +42,5 @@ publish
 build/buildinfo.properties
 build/config/buildinfo.properties
 httpd.js
+node_modules/
+out/
