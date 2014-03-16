@@ -105,6 +105,8 @@ docpadConfig = {
 	        deployBranch: 'master'
 	    livereload:
             enabled: false
+        cleanurls:
+        	enabled: false
 
 
 	# =================================
