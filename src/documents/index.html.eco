@@ -53,6 +53,9 @@ layout: 'default'
 				<% end %>
 			</ul>
 		</div>
+		<% if project.footer: %>
+		<div class="panel-footer text-right"><%- project.footer %></div>
+		<% end %>
 	</div>
 	</div>	<!-- /project-<%= project.basename %> -->
 <% end %>
